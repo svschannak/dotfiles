@@ -25,7 +25,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'Conque-Shell'
-Bundle 'snipMate'
+Bundle 'garbas/vim-snipmate'
 Bundle 'pboehm/snipmate-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Python-mode-klen'
