@@ -1,33 +1,71 @@
 # cd
 alias ..='cd ..'
 
-# ls
-alias ls="ls -F"
-alias l="ls -lAh"
-alias ll="ls -l"
-alias la='ls -A'
-
-# git
-alias gl='git pull'
+# git-shortcuts
+function gam { git commit -a -m "$1"; }
+function gp {
+    git status 2> /dev/null | grep 'On branch master' > /dev/null && git push --all
+}
+alias gpl="git pull"
+alias gd="git diff"
+alias gs="git status"
+alias gl="git log --pretty=oneline"
 alias gp='git push'
-alias gd='git diff'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
-alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
-# rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
-
 # commands starting with % for pasting from web
 alias %=' '
+
+
+# aliases
+alias upd=" sudo yum update"
+alias smbconf=" sudo vi /etc/samba/smb.conf"
+alias isoumount=" sudo umount /mnt"
+alias tailmess=" sudo tail -f /var/log/messages"
+alias disoff=" xset -display :0 dpms force off"
+alias s="sudo -s"
+alias s-="su -"
+alias zsc="$EDITOR ~/.zshrc"
+alias lsd="ls ~/Downloads"
+alias p="pdown"
+alias g="gsl"
+alias um="umount.sh"
+alias sm="sudo projects/Scripts/setup_mediatomb.sh"
+alias sctl="systemctl"
+alias vi="vim"
+alias backupebooks='rsync -a -L --delete --progress server:/var/ebooks/ ~/eBooks/i77i/'
+alias spindown="sudo hdparm -S6 /dev/sdb; sudo hdparm -y /dev/sdb"
+alias rt="rake test 2> /dev/null"
+alias srn="serienrenamer"
+alias smv="serienmover"
+
+# functions
+function ins { sudo yum install "$@"; }
+function rem { sudo yum erase "$@"; }
+function mkc { sudo yum makecache "$@"; }
+function samba {
+    sudo systemctl "$1" smb.service;
+    sudo systemctl "$1" nmb.service;
+}
+function isomount { sudo mount -o loop -t iso9660 "$1" /mnt;  }
+function tidy {
+	perltidy -b "$1";
+	rm "$1".bak 2>/dev/null;
+}
+function downscale {
+	mencoder "$1" -o "S2" -oac mp3lame -ovc xvid -xvidencopts pass=1 -vf scale=720:400
+}
+function lsl { ls -lisa "$@" }
+function speak {
+    espeak -vde "$@"
+}
+
+# named directories
+hash -d proj=~/projects
+hash -d noch=~/Downloads/.nochzuschauen
+hash -d down=~/Downloads

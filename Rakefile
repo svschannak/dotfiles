@@ -6,7 +6,7 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.rdoc LICENSE].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
         puts "identical ~/.#{file.sub('.erb', '')}"
@@ -30,6 +30,9 @@ task :install do
       link_file(file)
     end
   end
+
+  # Install Bundles in vim
+  system 'vim +BundleInstall +qall'
 end
 
 def replace_file(file)
