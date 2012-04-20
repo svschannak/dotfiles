@@ -1,6 +1,10 @@
-set guioptions-=T " hide toolbar
-set lines=55 columns=100
-
 colorscheme railscasts
 
-set guifont=DejaVu\ Sans\ Mono:h13
+" highlight 80th column
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
+highlight ColorColumn guibg=#333435
+
+set novb
+
