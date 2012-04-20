@@ -24,13 +24,10 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'Conque-Shell'
 Bundle 'snipMate'
 Bundle 'pboehm/snipmate-snippets'
+Bundle 'scrooloose/nerdtree'
 Bundle 'Python-mode-klen'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-surround'
@@ -71,11 +68,6 @@ map ´ <C-W>>
 
 "T-Comment
 map <leader>c <c-_><c-_>
-
-" dokuvimki
-let g:DokuVimKi_USER="philipp"
-let g:DokuVimKi_PASS="Handball--"
-let g:DokuVimKi_URL="http://tuxorials.de/lib/exe/xmlrpc.php"
 
 filetype plugin on
 

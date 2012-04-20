@@ -4,11 +4,13 @@ forked from ryanb/dotfiles
 
 == Installation
 
-  git clone git://github.com/pboehm/dotfiles ~/.dotfiles
+  git clone --recursive git://github.com/pboehm/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
 
 == Features
+
+Vundle plugin manager for vim is installed.
 
 I normally place all of my coding projects in ~/code, so this directory
 can easily be accessed (and tab completed) with the "c" command.
