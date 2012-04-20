@@ -25,6 +25,8 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'Conque-Shell'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'pboehm/snipmate-snippets'
 Bundle 'scrooloose/nerdtree'
