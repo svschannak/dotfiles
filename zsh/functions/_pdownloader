@@ -1,3 +1,5 @@
+#compdef pdown
+
 _pdown() {
  	_arguments \
 		'--help[Hilfeseite]' \

@@ -1,4 +1,4 @@
-#compdef getserieslinks
+#compdef gsl
 _gsl() {
  	_arguments \
 		'--help[Hilfeseite]' \

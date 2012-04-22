@@ -1,0 +1,14 @@
+#compdef serienrenamer
+
+_serienrenamer() {
+ 	_arguments \
+ 	    '1: :_directories' \
+		'--help[Hilfeseite]' \
+		'--version[Versionshinweis]' \
+		'--plugin=:Plugin:(Textfile SerienjunkiesOrgFeed SerienjunkiesOrg SerienjunkiesDe Wikipedia)' \
+		'--series=:Serienname:' \
+		'--season[Verzeichnis enthält Episoden einer Staffel]' \
+		'--ignore-filenamedata[Infos aus Dateiname verwerfen und Plugi fragen]' \
+		'--all[Alle Dateien verarbeiten, auch korrekt benannte]';
+}
+compdef _serienrenamer serienrenamer
