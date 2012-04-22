@@ -1,3 +1,4 @@
+#compdef getserieslinks
 _gsl() {
  	_arguments \
 		'--help[Hilfeseite]' \
