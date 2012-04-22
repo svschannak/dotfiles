@@ -31,6 +31,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'pboehm/snipmate-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Python-mode-klen'
+Bundle 'tpope/vim-rails.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
@@ -68,8 +69,30 @@ map + <C-W>+
 map # <C-W><
 map ´ <C-W>>
 
+map Q gq
+
+
 "T-Comment
 map <leader>c <c-_><c-_>
+
+" Hide search highlighting
+map <Leader>h :set invhls <CR>
+
+" Duplicate a selection
+" Visual mode: D
+vmap D y'>p
+
+" Press Shift+P while in visual mode to replace the selection without
+" overwriting the default register
+vmap P p :call setreg('"', getreg('0')) <CR>
+
+" No Help, please
+nmap <F1> <Esc>
+
+" Local config
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
 
 filetype plugin on
 
@@ -77,6 +100,9 @@ filetype plugin on
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufRead,BufNewFile *.html.erb setlocal filetype=html.eruby
 autocmd BufRead,BufNewFile *.less setlocal filetype=css
+
+" Enable soft-wrapping for text files
+autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 
 " Command that set up vim to break text
 command! -nargs=* Wrap set wrap linebreak nolist
