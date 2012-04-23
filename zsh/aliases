@@ -64,6 +64,7 @@ function lsl { ls -lisa "$@" }
 function speak {
     espeak -vde "$@"
 }
+function pr { cd ~/projects/"$1" }
 
 # named directories
 hash -d proj=~/projects

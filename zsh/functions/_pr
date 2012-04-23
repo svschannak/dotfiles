@@ -1,0 +1,2 @@
+#compdef pr
+_directories -W ~/projects -/
