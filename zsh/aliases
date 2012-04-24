@@ -43,6 +43,7 @@ alias spindown="sudo hdparm -S6 /dev/sdb; sudo hdparm -y /dev/sdb"
 alias rt="rake test 2> /dev/null"
 alias srn="serienrenamer"
 alias smv="serienmover"
+alias dot="cd ~/.dotfiles"
 
 # functions
 function ins { sudo yum install "$@"; }

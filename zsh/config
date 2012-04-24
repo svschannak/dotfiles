@@ -12,7 +12,11 @@ autoload colors
 colors
 
 # prompt
-export PROMPT='[%B%n%b@%m %2~] $(git_super_status)%# '
+ZSH_THEME_GIT_PROMPT_PREFIX=" ["
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[blue]%}"
+
+export PROMPT='[%B%n%b@%m %2~$(git_super_status)]%# '
 
 # variables
 HISTFILE=~/.zhistory
