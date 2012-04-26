@@ -1,0 +1,6 @@
+#compdef mux
+
+local -a projects
+projects=(`find ~/.tmuxinator/ -name \*.yml | cut -d/ -f5 | sed s:.yml::g`)
+
+_arguments '*:projects:($projects)'
