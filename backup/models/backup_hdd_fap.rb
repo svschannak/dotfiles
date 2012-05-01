@@ -6,10 +6,10 @@
 #
 # $ backup perform -t backup_hdd_tos [-c <path_to_configuration_file>]
 #
-Backup::Model.new(:backup_hdd_tos, 'extHDD-2TB-tos') do
+Backup::Model.new(:backup_hdd_fap, 'extHDD-2TB-fap') do
 
   sync_with RSync::Local do |rsync|
-    rsync.path     = "/media/extHDD-2TB-tos/Backup/"
+    rsync.path     = "/media/extHDD-1TB-fap/Backup/"
     rsync.mirror   = true
 
     rsync.directories do |directory|
