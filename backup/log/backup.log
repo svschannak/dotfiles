@@ -1,0 +1,36 @@
+[2012/05/01 17:52:41][message] Performing Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)'!
+[2012/05/01 17:52:41][message] [ backup 3.0.24 : ruby 1.9.3p0 (2011-10-30 revision 33570) [x86_64-linux] ]
+[2012/05/01 17:52:41][message] Syncer::RSync::Local started syncing the following directories:
+[2012/05/01 17:52:41][message]   /home/philipp/projects
+[2012/05/01 17:52:41][message] Running system utility 'rsync'...
+[2012/05/01 17:52:41][message] Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)' Completed Successfully in 00:00:00
+[2012/05/01 17:53:36][message] Performing Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)'!
+[2012/05/01 17:53:36][message] [ backup 3.0.24 : ruby 1.9.3p0 (2011-10-30 revision 33570) [x86_64-linux] ]
+[2012/05/01 17:53:36][message] Syncer::RSync::Local started syncing the following directories:
+[2012/05/01 17:53:36][message]   /home/philipp/projects/
+[2012/05/01 17:53:36][message] Running system utility 'rsync'...
+[2012/05/01 17:53:36][message] Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)' Completed Successfully in 00:00:00
+[2012/05/01 17:54:48][message] Performing Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)'!
+[2012/05/01 17:54:48][message] [ backup 3.0.24 : ruby 1.9.3p0 (2011-10-30 revision 33570) [x86_64-linux] ]
+[2012/05/01 17:54:48][message] Syncer::RSync::Local started syncing the following directories:
+[2012/05/01 17:54:48][message]   /home/philipp/projects/
+[2012/05/01 17:54:48][message] Running system utility 'rsync'...
+[2012/05/01 17:54:48][message] Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)' Completed Successfully in 00:00:00
+[2012/05/01 18:00:02][message] Performing Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)'!
+[2012/05/01 18:00:02][message] [ backup 3.0.24 : ruby 1.9.3p0 (2011-10-30 revision 33570) [x86_64-linux] ]
+[2012/05/01 18:00:02][message] Syncer::RSync::Local started syncing the following directories:
+[2012/05/01 18:00:02][message]   /home/philipp/Dropbox/projects/
+[2012/05/01 18:00:02][message] Running system utility 'rsync'...
+[2012/05/01 18:00:05][message] Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)' Completed Successfully in 00:00:03
+[2012/05/01 18:00:49][message] Performing Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)'!
+[2012/05/01 18:00:49][message] [ backup 3.0.24 : ruby 1.9.3p0 (2011-10-30 revision 33570) [x86_64-linux] ]
+[2012/05/01 18:00:49][message] Syncer::RSync::Local started syncing the following directories:
+[2012/05/01 18:00:49][message]   /home/philipp/Dropbox/projects/
+[2012/05/01 18:00:49][message] Running system utility 'rsync'...
+[2012/05/01 18:00:49][message] Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)' Completed Successfully in 00:00:00
+[2012/05/01 18:05:14][message] Performing Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)'!
+[2012/05/01 18:05:14][message] [ backup 3.0.24 : ruby 1.9.3p0 (2011-10-30 revision 33570) [x86_64-linux] ]
+[2012/05/01 18:05:14][message] Syncer::RSync::Local started syncing the following directories:
+[2012/05/01 18:05:14][message]   /home/philipp/Dropbox/projects/
+[2012/05/01 18:05:14][message] Running system utility 'rsync'...
+[2012/05/01 18:05:15][message] Backup for 'Backup for the extHDD-2TB-tos (backup_hdd_tos)' Completed Successfully in 00:00:01

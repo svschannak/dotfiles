@@ -66,6 +66,9 @@ function speak {
     espeak -vde "$@"
 }
 function pr { cd ~/projects/"$1" }
+function backup {
+   `which backup` "$@" --config-file=~/.backup/config.rb
+}
 
 # named directories
 hash -d proj=~/projects
