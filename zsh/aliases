@@ -33,7 +33,7 @@ alias s-="su -"
 alias zsc="$EDITOR ~/.zshrc"
 alias lsd="ls ~/Downloads"
 alias p="pdown"
-alias g="gsl"
+alias g="~/projects/getserieslinks/getserieslinks.pl"
 alias um="umount.sh"
 alias sm="sudo projects/Scripts/setup_mediatomb.sh"
 alias sctl="systemctl"
@@ -68,6 +68,12 @@ function speak {
 function pr { cd ~/projects/"$1" }
 function backup {
    `which backup` "$@" --config-file=~/.backup/config.rb
+}
+function http {
+    if [[ -z $1 ]]; then
+        1="50500"
+    fi
+    python -m SimpleHTTPServer $1
 }
 
 # named directories

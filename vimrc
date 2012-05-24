@@ -45,6 +45,7 @@ Bundle 'briandoll/change-inside-surroundings.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'gregsexton/MatchTag'
 Bundle 'Raimondi/delimitMate'
+Bundle 'vim-scripts/vim-json-bundle'
 
 filetype plugin indent on     " required!
 
