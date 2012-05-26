@@ -9,7 +9,7 @@
 Backup::Model.new(:backup_hdd_fap, 'extHDD-2TB-fap') do
 
   sync_with RSync::Local do |rsync|
-    rsync.path     = "/media/extHDD-1TB-fap/Backup/"
+    rsync.path     = "/run/media/philipp/extHDD-1TB-fap/Backup/"
     rsync.mirror   = true
 
     rsync.directories do |directory|
