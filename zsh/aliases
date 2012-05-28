@@ -2,6 +2,7 @@
 alias ..='cd ..'
 
 # git-shortcuts
+alias git="LANG=en_EN.UTF-8; git"
 function gam { git commit -a -m "$1"; }
 function gp {
     git status 2> /dev/null | grep 'On branch master' > /dev/null && git push --all
@@ -41,6 +42,7 @@ alias vi="vim"
 alias backupebooks='rsync -a -L --delete --progress server:/var/ebooks/ ~/eBooks/i77i/'
 alias spindown="sudo hdparm -S6 /dev/sdb; sudo hdparm -y /dev/sdb"
 alias rt="rake test 2> /dev/null"
+alias gne="get_new_episodes.sh"
 alias srn="serienrenamer"
 alias smv="serienmover"
 alias dot="cd ~/.dotfiles"
