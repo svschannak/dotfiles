@@ -1,10 +1,10 @@
 = dotfiles
 
-forked from ryanb/dotfiles
+forked from ryanb/dotfiles and customized for my own purpose
 
 == Installation
 
   git clone --recursive git://github.com/pboehm/dotfiles ~/.dotfiles
   cd ~/.dotfiles
-  rake install
+  ./install.sh     # and install the missing programs if needed
 
