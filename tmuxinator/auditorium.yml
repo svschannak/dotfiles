@@ -1,0 +1,9 @@
+# ~/.tmuxinator/auditorium.yml
+# you can make as many tabs as you wish...
+
+project_name: auditorium
+project_root: ~/projects/auditorium
+tabs:
+  - server: rails server -p50500
+  - console: rails console development
+  - shell: gvim . && cd . && clear
