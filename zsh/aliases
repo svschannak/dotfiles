@@ -2,7 +2,7 @@
 alias ..='cd ..'
 
 # git-shortcuts
-alias git="LANG=en_EN.UTF-8; git"
+alias git="LANG=en_EN.UTF-8 git"
 function gam { git commit -a -m "$1"; }
 function gp {
     git status 2> /dev/null | grep 'On branch master' > /dev/null && git push --all
@@ -29,7 +29,7 @@ alias smbconf=" sudo vi /etc/samba/smb.conf"
 alias isoumount=" sudo umount /mnt"
 alias tailmess=" sudo tail -f /var/log/messages"
 alias disoff=" xset -display :0 dpms force off"
-alias s="sudo -s"
+alias s="sudo -i"
 alias s-="su -"
 alias zsc="$EDITOR ~/.zshrc"
 alias lsd="ls ~/Downloads"

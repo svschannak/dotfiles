@@ -1,0 +1,8 @@
+# ~/.tmuxinator/ebooks.yml
+# you can make as many tabs as you wish...
+
+project_name: ebooks
+project_root: ~/projects/EbookManagement
+tabs:
+  - server: ./manage.py runserver
+  - shell: gvim . && cd . && clear
