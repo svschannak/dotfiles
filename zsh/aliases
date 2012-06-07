@@ -2,22 +2,30 @@
 alias ..='cd ..'
 
 # git-shortcuts
-alias git="LANG=en_EN.UTF-8 git"
+alias ga="git add"
+alias gb='git branch'
+alias gc='git commit'
+alias gco='git checkout'
+alias gd="git diff"
+alias git="LC_ALL=en_US.UTF-8 git"
+alias gl="git log --pretty=oneline"
+alias gp='git push'
+alias gpl="git pull"
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gs="git status"
+alias gsv='git svn'
+
 function gam { git commit -a -m "$1"; }
 function gp {
     git status 2> /dev/null | grep 'On branch master' > /dev/null && git push --all
 }
-alias gpl="git pull"
-alias gd="git diff"
-alias gs="git status"
-alias gl="git log --pretty=oneline"
-alias gp='git push'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
-alias gb='git branch'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+function gcb { git checkout -b "$1" }
+function merge_with_master {
+    branch_name="$(git symbolic-ref HEAD 2>/dev/null)"
+    echo $branch_name | grep master > /dev/null && echo "Already on master" && return
+    git checkout master
+    git merge $branch_name
+}
 
 # commands starting with % for pasting from web
 alias %=' '
@@ -46,6 +54,7 @@ alias gne="get_new_episodes.sh"
 alias srn="serienrenamer"
 alias smv="serienmover"
 alias dot="cd ~/.dotfiles"
+alias vim-bundleinstall="vim +BundleInstall +qall"
 
 # functions
 function ins { sudo yum install "$@"; }
