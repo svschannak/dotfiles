@@ -18,6 +18,11 @@ set incsearch
 set vb t_vb=
 syntax enable
 
+" allow project specific settings by
+" placing .vimrc files in a directory
+set exrc
+set secure
+
 " Vundle-Plugin Manager
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
