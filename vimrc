@@ -103,6 +103,7 @@ filetype plugin on
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufRead,BufNewFile *.html.erb setlocal filetype=html.eruby
 autocmd BufRead,BufNewFile *.less setlocal filetype=css
+autocmd BufRead,BufNewFile *.rb setlocal sw=2 ts=2 softtabstop=2
 
 " Enable soft-wrapping for text files
 autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
