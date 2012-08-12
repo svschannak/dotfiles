@@ -15,7 +15,8 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set vb t_vb=
+set visualbell
+set noerrorbells visualbell t_vb=
 syntax enable
 
 " allow project specific settings by
@@ -28,32 +29,94 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"""""""""""""""""""""""""""""
+" List of installed plugins "
+"""""""""""""""""""""""""""""
+
 Bundle 'gmarik/vundle'
-Bundle 'Conque-Shell'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
+
+" Snipmate plugin with a set of snippets and two dependencies
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/snipmate-snippets'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+
+" NerdTree file explorer
 Bundle 'scrooloose/nerdtree'
+
+" THE rails gem
 Bundle 'tpope/vim-rails.git'
-Bundle 'vim-ruby/vim-ruby'
+
+" surround or change surrounding of text
 Bundle 'tpope/vim-surround'
+
+" Git integration
 Bundle 'tpope/vim-fugitive'
+
+" provides Funktion that aligns text in form of a table
+" :Tabularize /regex/
 Bundle 'godlygeek/tabular'
+
+" provides custom movement, Type <leader><leader> + w/b
+" this marks the first character of every word
 Bundle 'Lokaltog/vim-easymotion'
+
+" Easy creation of HTML structure through CTRL-e
+" div#test => <div id="test"></div>
 Bundle 'sophacles/vim-bundle-sparkup'
+
+" providex commenting function
 Bundle 'tComment'
+
+" Change inside something through <leader>ci
 Bundle 'briandoll/change-inside-surroundings.vim'
+
+" Remove Trailing Whitespace
 Bundle 'bronson/vim-trailing-whitespace'
+
+" highlights matching html tags on hover
 Bundle 'gregsexton/MatchTag'
+
+" closes "'... automatically
 Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/vim-json-bundle'
 
+" bar that holds variables/functions
+Bundle 'majutsushi/tagbar'
+
+" verbose status bar
+Bundle 'Lokaltog/vim-powerline'
+set laststatus=2
+
+" fuzzy finder on CTRL+P
+Bundle 'kien/ctrlp.vim'
+let g:ctrlp_max_height = 30
+set wildignore+=*.pyc
+set wildignore+=*build/*
+
+" plugin that improves the python handling overall
+" with static code analysis
+Bundle 'klen/python-mode'
+let ropevim_enable_shortcuts = 1
+let g:pymode_rope_extended_complete = 1
+let g:pymode_breakpoint = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_builtin_objs = 0
+let g:pymode_syntax_builtin_funcs = 0
+set nofoldenable
+
 filetype plugin indent on     " required!
 
-" Mappings
+""""""""""""
+" Mappings "
+""""""""""""
 let mapleader = ","
+
 map <silent> <leader>y :NERDTreeToggle<CR>
+map <silent> <Leader>g :RopeGotoDefinition<CR>
+map <silent> <leader>t :TagbarToggle<CR>
+map <leader>c <c-_><c-_> "TComment
+
 map <silent> <c-c> :q<CR>
 map <silent> <c-s> :w<CR>
 
@@ -74,9 +137,11 @@ map ´ <C-W>>
 
 map Q gq
 
-
-"T-Comment
-map <leader>c <c-_><c-_>
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
@@ -100,6 +165,8 @@ endif
 filetype plugin on
 
 " autocmd's
+autocmd! bufwritepost .vimrc source % "reload config on save
+autocmd GUIEnter * set visualbell t_vb=
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufRead,BufNewFile *.html.erb setlocal filetype=html.eruby
 autocmd BufRead,BufNewFile *.less setlocal filetype=css
