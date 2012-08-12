@@ -1,10 +1,16 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" My custom vim configuration with a set of installed plugins "
+" through Vundle-Plugin-Manager                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" common options
 set nocompatible
 set showmode
 set nowrap
 set tabstop=4
 set softtabstop=4
-set expandtab
 set shiftwidth=4
+set expandtab
 set shiftround
 set backspace=indent,eol,start
 set autoindent
@@ -17,21 +23,35 @@ set hlsearch
 set incsearch
 set visualbell
 set noerrorbells visualbell t_vb=
-syntax enable
 
-" allow project specific settings by
-" placing .vimrc files in a directory
+" allow project specific settings by placing .vimrc files in a directory
 set exrc
 set secure
 
-" Vundle-Plugin Manager
+syntax enable
+
+""""""""""""""""""""""""
+" Gui specific options "
+""""""""""""""""""""""""
+if has('gui_running')
+    set cursorline
+
+    colorscheme railscasts
+
+    " highlight 80th column
+    if exists('+colorcolumn')
+        set colorcolumn=80
+    endif
+
+    highlight ColorColumn guibg=#333435
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Management: List of installed plugins "
+""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-"""""""""""""""""""""""""""""
-" List of installed plugins "
-"""""""""""""""""""""""""""""
 
 Bundle 'gmarik/vundle'
 
@@ -53,7 +73,7 @@ Bundle 'tpope/vim-surround'
 " Git integration
 Bundle 'tpope/vim-fugitive'
 
-" provides Funktion that aligns text in form of a table
+" provides function that aligns text in form of a table
 " :Tabularize /regex/
 Bundle 'godlygeek/tabular'
 
@@ -85,8 +105,10 @@ Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'majutsushi/tagbar'
 
 " verbose status bar
-Bundle 'Lokaltog/vim-powerline'
-set laststatus=2
+if has('gui_running')
+    Bundle 'Lokaltog/vim-powerline'
+    set laststatus=2
+endif
 
 " fuzzy finder on CTRL+P
 Bundle 'kien/ctrlp.vim'
@@ -105,6 +127,10 @@ let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 set nofoldenable
 
+" send commands to tmux
+" LEADER+s to select session, LEADER+sx for a command prompt
+Bundle "westoque/muxmate"
+
 filetype plugin indent on     " required!
 
 """"""""""""
@@ -116,6 +142,9 @@ map <silent> <leader>y :NERDTreeToggle<CR>
 map <silent> <Leader>g :RopeGotoDefinition<CR>
 map <silent> <leader>t :TagbarToggle<CR>
 map <leader>c <c-_><c-_> "TComment
+
+" paste from clipboard
+nmap <silent> <leader>v "+gP
 
 map <silent> <c-c> :q<CR>
 map <silent> <c-s> :w<CR>
@@ -130,11 +159,13 @@ nmap <silent> <A-Right> :wincmd l<CR>
 nmap <silent> <C-Left> :tabp<CR>
 nmap <silent> <C-Right> :tabn<CR>
 
+" pane resizing
 map - <C-W>-
 map + <C-W>+
 map # <C-W><
 map ´ <C-W>>
 
+" reformat block of text to fit in 80 chars
 map Q gq
 
 " easier moving of code blocks
