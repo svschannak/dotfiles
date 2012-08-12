@@ -72,6 +72,7 @@ Bundle 'tpope/vim-surround'
 
 " Git integration
 Bundle 'tpope/vim-fugitive'
+let g:fugitive_git_executable="LC_ALL=en_US.UTF-8 git"
 
 " provides function that aligns text in form of a table
 " :Tabularize /regex/
@@ -116,17 +117,6 @@ let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*build/*
 
-" plugin that improves the python handling overall
-" with static code analysis
-Bundle 'klen/python-mode'
-let ropevim_enable_shortcuts = 1
-let g:pymode_rope_extended_complete = 1
-let g:pymode_breakpoint = 0
-let g:pymode_syntax = 1
-let g:pymode_syntax_builtin_objs = 0
-let g:pymode_syntax_builtin_funcs = 0
-set nofoldenable
-
 " send commands to tmux
 " LEADER+s to select session, LEADER+sx for a command prompt
 Bundle "westoque/muxmate"
@@ -139,7 +129,7 @@ filetype plugin indent on     " required!
 let mapleader = ","
 
 map <silent> <leader>y :NERDTreeToggle<CR>
-map <silent> <Leader>g :RopeGotoDefinition<CR>
+map <silent> <Leader>g :Gstatus<CR>
 map <silent> <leader>t :TagbarToggle<CR>
 map <leader>c <c-_><c-_> "TComment
 
