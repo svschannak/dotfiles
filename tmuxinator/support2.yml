@@ -1,0 +1,9 @@
+# ~/.tmuxinator/support2.yml
+# you can make as many tabs as you wish...
+
+project_name: support2
+project_root: ~/projects/support2
+tabs:
+  - server: setup_django_env && ./manage.py runserver
+  - zsh1: setup_django_env  && gvim . && cd . && clear
+  - zsh2: setup_django_env
