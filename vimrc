@@ -30,21 +30,6 @@ set secure
 
 syntax enable
 
-""""""""""""""""""""""""
-" Gui specific options "
-""""""""""""""""""""""""
-if has('gui_running')
-    set cursorline
-
-    colorscheme railscasts
-
-    " highlight 80th column
-    if exists('+colorcolumn')
-        set colorcolumn=80
-    endif
-
-    highlight ColorColumn guibg=#333435
-endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Management: List of installed plugins "
@@ -54,12 +39,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-
-" Snipmate plugin with a set of snippets and two dependencies
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
 
 " NerdTree file explorer
 Bundle 'scrooloose/nerdtree'
@@ -85,8 +64,9 @@ Bundle 'Lokaltog/vim-easymotion'
 " Easy creation of HTML structure through CTRL-e
 " div#test => <div id="test"></div>
 Bundle 'sophacles/vim-bundle-sparkup'
+let g:sparkupNextMapping=''
 
-" providex commenting function
+" provides commenting function
 Bundle 'tComment'
 
 " Change inside something through <leader>ci
@@ -117,11 +97,37 @@ let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*build/*
 
+" solarized theme
+Bundle 'altercation/vim-colors-solarized'
+
 " send commands to tmux
 " LEADER+s to select session, LEADER+sx for a command prompt
 Bundle "westoque/muxmate"
 
+" Snipmate plugin with a set of snippets and two dependencies
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/snipmate-snippets'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+
 filetype plugin indent on     " required!
+
+""""""""""""""""""""""""
+" Gui specific options "
+""""""""""""""""""""""""
+if has('gui_running')
+    set cursorline
+
+    set background=dark
+    colorscheme solarized
+
+    " highlight 80th column
+    if exists('+colorcolumn')
+        set colorcolumn=80
+    endif
+
+    "highlight ColorColumn guibg=#333435
+endif
 
 """"""""""""
 " Mappings "
