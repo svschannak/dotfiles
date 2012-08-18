@@ -69,6 +69,10 @@ let g:sparkupNextMapping=''
 " provides commenting function
 Bundle 'tComment'
 
+" preview markdown in browser
+Bundle 'waylan/vim-markdown-extra-preview'
+let g:VMEPhtmlreader="google-chrome"
+
 " Change inside something through <leader>ci
 Bundle 'briandoll/change-inside-surroundings.vim'
 
@@ -90,6 +94,9 @@ if has('gui_running')
     Bundle 'Lokaltog/vim-powerline'
     set laststatus=2
 endif
+
+" better grep
+Bundle 'mileszs/ack.vim'
 
 " fuzzy finder on CTRL+P
 Bundle 'kien/ctrlp.vim'
