@@ -66,9 +66,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sophacles/vim-bundle-sparkup'
 let g:sparkupNextMapping=''
 
-" provides commenting function
-Bundle 'tComment'
-
 " preview markdown in browser
 Bundle 'waylan/vim-markdown-extra-preview'
 let g:VMEPhtmlreader="google-chrome"
@@ -117,6 +114,10 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
+" provides commenting function
+Bundle 'tomtom/tcomment_vim'
+
+
 filetype plugin indent on     " required!
 
 """"""""""""""""""""""""
@@ -144,7 +145,7 @@ let mapleader = ","
 map <silent> <leader>y :NERDTreeToggle<CR>
 map <silent> <Leader>g :Gstatus<CR>
 map <silent> <leader>t :TagbarToggle<CR>
-map <leader>c <c-_><c-_> "TComment
+map <silent> <leader>c :TComment<CR>
 
 " paste from clipboard
 nmap <silent> <leader>v "+gP
