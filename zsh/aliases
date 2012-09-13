@@ -2,47 +2,45 @@
 alias ..='cd ..'
 
 # git-shortcuts
+alias git="LC_ALL=en_US.UTF-8 LANG=$LC_ALL git"
 alias ga="git add"
+alias g.="git add . && git status"
 alias gb='git branch'
 alias gc='git commit'
 alias gco='git checkout'
 alias gd="git diff"
-alias git="LC_ALL=en_US.UTF-8 git"
 alias gl="git log --pretty=oneline"
 alias gp='git push'
 alias gpl="git pull"
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gs="git status"
-alias gsv='git svn'
+alias gst="git stash"
+alias feature="git checkout -b"
+alias mwm="merge_with_master"
 
 function gam { git commit -a -m "$1"; }
 function gp {
-    git status 2> /dev/null | grep 'On branch master' > /dev/null && git push --all
+    git status 2> /dev/null | grep 'On branch master' > /dev/null && git push
 }
-function gcb { git checkout -b "$1" }
 function merge_with_master {
-    branch_name="$(git symbolic-ref HEAD 2>/dev/null)"
-    echo $branch_name | grep master > /dev/null && echo "Already on master" && return
+    branch_name=$(git branch | grep "*" | sed "s/* //")
+    test $branch_name = "master" &&\
+        echo "Already on master, checkout your feature branch" && return
     git checkout master
-    git merge $branch_name
+    grep "origin" .git/config && git pull
+    git merge --ff-only $branch_name && git branch -d $branch_name && return || \
+        git checkout $branch_name
+    echo "Only FF Merge allowed: Try 'git rebase master' and reissue this command"
 }
-
-# commands starting with % for pasting from web
-alias %=' '
-
 
 # aliases
-alias upd=" sudo yum update"
-alias smbconf=" sudo vi /etc/samba/smb.conf"
-alias isoumount=" sudo umount /mnt"
-alias tailmess=" sudo tail -f /var/log/messages"
-alias disoff=" xset -display :0 dpms force off"
+alias upd="sudo yum update"
+alias smbconf="sudo vi /etc/samba/smb.conf"
+alias isoumount="sudo umount /mnt"
+alias tailmess="sudo tail -f /var/log/messages"
+alias disoff="xset -display :0 dpms force off"
 alias s="sudo -i"
 alias s-="su -"
-alias zsc="$EDITOR ~/.zshrc"
 alias lsd="ls ~/Downloads"
-alias p="pdown"
-alias g="~/projects/getserieslinks/getserieslinks.pl"
 alias um="umount_drives.rb"
 alias sm="sudo projects/Scripts/setup_mediatomb.sh"
 alias sctl="systemctl"
