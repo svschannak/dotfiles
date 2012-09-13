@@ -64,7 +64,7 @@ Bundle 'Lokaltog/vim-easymotion'
 " Easy creation of HTML structure through CTRL-e
 " div#test => <div id="test"></div>
 Bundle 'sophacles/vim-bundle-sparkup'
-let g:sparkupNextMapping=''
+let g:sparkupNextMapping='<leader>^'
 
 " preview markdown in browser
 Bundle 'waylan/vim-markdown-extra-preview'
@@ -83,7 +83,7 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/vim-json-bundle'
 
-" bar that holds variables/functions
+" bar that holds variables/functions <leader>t
 Bundle 'majutsushi/tagbar'
 
 " verbose status bar
@@ -110,13 +110,12 @@ Bundle "westoque/muxmate"
 
 " Snipmate plugin with a set of snippets and two dependencies
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
+Bundle 'pboehm/snipmate-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
 " provides commenting function
 Bundle 'tomtom/tcomment_vim'
-
 
 filetype plugin indent on     " required!
 
@@ -143,6 +142,7 @@ endif
 let mapleader = ","
 
 map <silent> <leader>y :NERDTreeToggle<CR>
+map <silent> <leader>f :FixWhitespace<CR>
 map <silent> <Leader>g :Gstatus<CR>
 map <silent> <leader>t :TagbarToggle<CR>
 map <silent> <leader>c :TComment<CR>
