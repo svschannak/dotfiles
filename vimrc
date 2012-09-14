@@ -24,6 +24,12 @@ set incsearch
 set visualbell
 set noerrorbells visualbell t_vb=
 
+" Fold settings
+set foldmethod=indent
+set foldnestmax=2
+set nofoldenable
+set foldlevel=1
+
 " allow project specific settings by placing .vimrc files in a directory
 set exrc
 set secure
@@ -133,7 +139,11 @@ if has('gui_running')
         set colorcolumn=80
     endif
 
-    "highlight ColorColumn guibg=#333435
+    " remove some buttons from the toolbar
+    aunmenu ToolBar.Print
+
+    :set guioptions-=m  "remove menu bar
+    :set guioptions-=r  "remove right-hand scroll bar
 endif
 
 """"""""""""
@@ -206,6 +216,9 @@ autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufRead,BufNewFile *.html.erb setlocal filetype=html.eruby
 autocmd BufRead,BufNewFile *.less setlocal filetype=css
 autocmd BufRead,BufNewFile *.rb setlocal sw=2 ts=2 softtabstop=2
+
+" Move all new tabs to the end
+autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
 
 " Enable soft-wrapping for text files
 autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
