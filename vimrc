@@ -156,6 +156,7 @@ map <silent> <leader>f :FixWhitespace<CR>
 map <silent> <Leader>g :Gstatus<CR>
 map <silent> <leader>t :TagbarToggle<CR>
 map <silent> <leader>c :TComment<CR>
+map <silent> <leader>m :Me<CR>
 
 " paste from clipboard
 nmap <silent> <leader>v "+gP

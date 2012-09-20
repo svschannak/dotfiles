@@ -2,7 +2,7 @@
 alias ..='cd ..'
 
 # git-shortcuts
-alias git="LC_ALL=en_US.UTF-8 LANG=$LC_ALL git"
+alias git="LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 git"
 alias ga="git add"
 alias g.="git add . && git status"
 alias gb='git branch'
@@ -26,7 +26,7 @@ function merge_with_master {
     test $branch_name = "master" &&\
         echo "Already on master, checkout your feature branch" && return
     git checkout master
-    grep "origin" .git/config && git pull
+    grep "origin" .git/config > /dev/null && git pull
     git merge --ff-only $branch_name && git branch -d $branch_name && return || \
         git checkout $branch_name
     echo "Only FF Merge allowed: Try 'git rebase master' and reissue this command"
