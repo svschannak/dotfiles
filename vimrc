@@ -144,6 +144,8 @@ if has('gui_running')
 
     :set guioptions-=m  "remove menu bar
     :set guioptions-=r  "remove right-hand scroll bar
+
+    :set guifont=Source\ Code\ Pro\ 11
 endif
 
 """"""""""""
