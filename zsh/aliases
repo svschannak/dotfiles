@@ -89,3 +89,4 @@ function http {
 hash -d proj=~/projects
 hash -d noch=~/Downloads/.nochzuschauen
 hash -d down=~/Downloads
+hash -d segments=~/.tmux-powerline/segments/
