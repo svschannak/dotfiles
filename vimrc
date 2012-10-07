@@ -120,6 +120,9 @@ Bundle 'pboehm/snipmate-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
+" LiveReload Browser on file change
+Bundle 'flomotlik/vim-livereload'
+
 " provides commenting function
 Bundle 'tomtom/tcomment_vim'
 
