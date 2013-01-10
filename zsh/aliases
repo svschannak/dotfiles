@@ -27,9 +27,13 @@ function merge_with_master {
         echo "Already on master, checkout your feature branch" && return
     git checkout master
     grep "origin" .git/config > /dev/null && git pull
-    git merge --ff-only $branch_name && git branch -d $branch_name && return || \
+    git merge --ff-only $branch_name && git branch -d $branch_name \
+        && echo "You can now 'git push' your code" && return || \
         git checkout $branch_name
-    echo "Only FF Merge allowed: Try 'git rebase master' and reissue this command"
+    echo "Your are behind master, a clean Merge is not possible!"
+    echo -n "Should I rebase it with master and try it again? (y/n) "
+    read ANSWER
+    [[ $ANSWER =~ "^[jy]" ]] && git rebase master && merge_with_master
 }
 
 # aliases
