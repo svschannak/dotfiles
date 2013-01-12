@@ -1,0 +1,6 @@
+project_name: junkie
+project_root: ~/projects/junkie
+tabs:
+  - shell: gvim . && cd . && clear
+  - pry: pry
+  - pyload: python ~/.pyload/pyLoadCore.py &

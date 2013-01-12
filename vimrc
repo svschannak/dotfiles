@@ -50,10 +50,13 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 
 " THE rails gem
-Bundle 'tpope/vim-rails.git'
+" Bundle 'tpope/vim-rails.git'
 
 " surround or change surrounding of text
 Bundle 'tpope/vim-surround'
+
+" highlight and complete special ruby constructs like do/end
+Bundle 'tpope/vim-endwise'
 
 " Git integration
 Bundle 'tpope/vim-fugitive'
