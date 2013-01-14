@@ -33,7 +33,8 @@ function merge_with_master {
     echo "Your are behind master, a clean Merge is not possible!"
     echo -n "Should I rebase it with master and try it again? (y/n) "
     read ANSWER
-    [[ $ANSWER =~ "^[jy]" ]] && git rebase master && merge_with_master
+    [[ -n `echo $ANSWER | grep '^[jyJY]'` ]] && \
+        git rebase master && merge_with_master
 }
 
 # aliases

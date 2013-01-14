@@ -42,5 +42,5 @@ setopt completeinword
 setopt menucomplete
 
 # load functions
-fpath=(~/.zsh/functions $fpath)
+fpath=(~/.zsh/functions ~/.zsh/additional_completions/src/ $fpath)
 autoload -U ~/.zsh/functions/*(:t)
