@@ -7,10 +7,6 @@ show-throug-less() { LBUFFER="$LBUFFER| less" }
 zle -N show-throug-less
 bindkey '^[l' show-throug-less
 
-word-count() { LBUFFER="$LBUFFER| wc -l" }
-zle -N word-count
-bindkey '^[w' word-count
-
 add-help() { LBUFFER="$LBUFFER --help" }
 zle -N add-help
 bindkey '^[-' add-help

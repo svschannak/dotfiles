@@ -1,13 +1,6 @@
 autoload -U compinit
 compinit
 
-# matches case insensitive for lowercase
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# pasting with tabs doesn't perform completion
-#zstyle ':completion:*' insert-tab pending
-
-
 # error tolerance
 zstyle ':completion:*' completer _complete _correct _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( 0 numeric )'
@@ -21,8 +14,3 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%S%d%s'
 
 zstyle ':completion::complete:*' rehash true
-
-# ssh
-hosts=(n130 server)
-zstyle ':completion:*:(ssh|scp|sftp):*' hosts $hosts
-

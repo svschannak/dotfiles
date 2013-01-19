@@ -10,3 +10,12 @@
 [submodule "zsh/additional_completions"]
 	path = zsh/additional_completions
 	url = https://github.com/zsh-users/zsh-completions
+[submodule "bin/mkvdts2ac3"]
+	path = bin/mkvdts2ac3
+	url = https://github.com/JakeWharton/mkvdts2ac3.git
+[submodule "bin/springer_download"]
+	path = bin/springer_download
+	url = https://github.com/milianw/springer_download.git
+[submodule "bin/Scripts"]
+	path = bin/Scripts
+	url = git@github.com:pboehm/Scripts.git

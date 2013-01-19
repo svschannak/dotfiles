@@ -47,5 +47,7 @@ echo "Running 'rake install' to complet the installation process ..."
 rake install
 
 # run other things that are needed to complete the install process
+git submodule update --init 
+
 cd vim/bundle/vim-livereload/
 rake

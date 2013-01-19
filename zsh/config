@@ -24,8 +24,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 export EDITOR=vim
-# export LC_ALL=en_US.UTF-8
-export PATH=$PATH:~/projects/Scripts
+
+# include all directories in ~/.bin into $PATH
+PATH=$PATH:`find ~/.bin/* -maxdepth 0 -type d | xargs | sed 's/ /:/g'`
 
 # options
 setopt autocd
@@ -42,5 +43,4 @@ setopt completeinword
 setopt menucomplete
 
 # load functions
-fpath=(~/.zsh/functions ~/.zsh/additional_completions/src/ $fpath)
-autoload -U ~/.zsh/functions/*(:t)
+fpath=(~/.zsh/functions ~/.zsh/additional_completions/src $fpath)
