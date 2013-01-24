@@ -32,7 +32,7 @@ if [[ $ARE_ALL_APPS_THERE == 0 ]]; then
     echo "A list of package names for different distributions:"
     echo "Fedora: git-all zsh vim-enhanced vim-X11 ruby rubygems rubygem-rake tmux"
     echo "Ubuntu: git zsh vim vim-gnome ruby rubygems rake tmux"
-
+    echo "Mac: Just try brew or port with Ubuntu-Names"
     exit 1
 fi
 

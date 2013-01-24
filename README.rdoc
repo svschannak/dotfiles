@@ -1,10 +1,10 @@
 = dotfiles
 
-forked from ryanb/dotfiles and customized for my own purpose
+forked from pboehm/dotfiles (that is based on ryanb/dotfiles) and customized for the mac
 
 == Installation
 
-  git clone --recursive git://github.com/pboehm/dotfiles ~/.dotfiles
+  git clone --recursive git://github.com/svschannak/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   ./install.sh     # and install the missing programs if needed
 
